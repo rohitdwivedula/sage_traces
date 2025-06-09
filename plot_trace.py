@@ -15,9 +15,9 @@ freq = Counter(nums)
 
 x = sorted(freq)
 y = [freq[n] * 12 for n in x]
-plt.plot(x, y, marker='x')
+plt.fill_between(x, 0, y, label="Capacity", alpha=0.2)
 plt.xlabel("Time (s)")
 plt.ylabel("Available Bandwidth")
 plt.title("Frequency vs Number")
 plt.grid(True)
-plt.show()
+plt.savefig("trace.png")
